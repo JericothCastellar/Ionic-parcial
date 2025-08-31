@@ -1,32 +1,30 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  standalone: false,
-
+  standalone: false, 
 })
 export class LoginPage {
- email: string = '';
-  password: string = '';
+  email = '';
+  password = '';
 
   constructor(private router: Router) {}
 
-login() {
-  // Datos de prueba
-  const usuarioValido = 'jane@doe.com';
-  const passwordValida = '1234567890';
+  login() {
+    const savedUser = JSON.parse(localStorage.getItem('user') || '{}');
 
-
-  if (this.email === usuarioValido && this.password === passwordValida) {
-    // Guardar en localStorage para simular sesión
-    localStorage.setItem('user', JSON.stringify({ email: this.email }));
-    // Redirigir al home
-    this.router.navigate(['/home']);
-  } else {
-    alert('Correo o contraseña incorrectos');
+    if (
+      this.email === savedUser.email &&
+      CryptoJS.SHA256(this.password).toString() === savedUser.password
+    ) {
+      localStorage.setItem('session', JSON.stringify({ email: this.email }));
+      this.router.navigate(['/home']);
+    } else {
+      alert('Correo o contraseña incorrectos');
+    }
   }
-}
 }
