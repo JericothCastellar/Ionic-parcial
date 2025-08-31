@@ -19,6 +19,7 @@ login() {
   const usuarioValido = 'jane@doe.com';
   const passwordValida = '1234567890';
 
+
   if (this.email === usuarioValido && this.password === passwordValida) {
     // Guardar en localStorage para simular sesión
     localStorage.setItem('user', JSON.stringify({ email: this.email }));
