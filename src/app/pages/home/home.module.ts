@@ -7,8 +7,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 
 // Importa los componentes directamente
-import { HeaderComponent } from '../../components/header/header.component';
-import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [

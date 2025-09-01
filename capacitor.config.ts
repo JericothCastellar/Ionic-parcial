@@ -1,9 +1,10 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'News app',
-  webDir: 'www'
+  appId: 'com.company.tvnews',
+  appName: 'TV News',
+  webDir: 'www',
+
 };
 
 export default config;
