@@ -1,3 +1,9 @@
-<p>
-  card works!
-</p>
+<ion-card (click)="handleClick()">
+  <img class="card-img" [src]="news.urlToImage || 'assets/no-image.png'" alt="Imagen noticia">
+  <ion-card-header>
+    <ion-card-title>{{ news.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{ news.description }}
+  </ion-card-content>
+</ion-card>

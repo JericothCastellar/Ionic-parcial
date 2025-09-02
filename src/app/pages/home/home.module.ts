@@ -2,25 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
-import { HomePageRoutingModule } from './home-routing.module';
+import { SharedModule } from 'src/app/shared/shared-module';
 import { HomePage } from './home.page';
-
-// Importa los componentes directamente
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    SharedModule,
+    RouterModule.forChild([{ path: '', component: HomePage }])
   ],
-  declarations: [
-    HomePage,
-    HeaderComponent,
-    SidebarComponent
-  ]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

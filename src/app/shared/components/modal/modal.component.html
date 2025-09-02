@@ -1,3 +1,16 @@
-<p>
-  modal works!
-</p>
+<ion-modal [isOpen]="isOpen" (ionModalDidDismiss)="dismiss()">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ title }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="dismiss()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <p>{{ description }}</p>
+    <app-button (click)="openInAppBrowser()">Leer Completo</app-button>
+  </ion-content>
+</ion-modal>
+  

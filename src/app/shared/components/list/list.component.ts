@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
-  standalone: false,
+  template: `
+    <ion-list>
+      <ion-item *ngFor="let item of items">
+        {{ item }}
+      </ion-item>
+    </ion-list>
+  `,
+  styles: [``],
+  standalone:false,
 })
-export class ListComponent  implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
+export class ListComponent {
+  @Input() items: string[] = [];
 }

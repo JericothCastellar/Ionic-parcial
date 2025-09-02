@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
-  standalone: false,
+  template: `
+    <ion-item>
+      <ion-label position="floating">{{ label }}</ion-label>
+      <ion-input [type]="type" [(ngModel)]="value"></ion-input>
+    </ion-item>
+  `,
+  styles: [``],
+  standalone:false,
 })
-export class InputComponent  implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
+export class InputComponent {
+  @Input() label: string = 'Input';
+  @Input() type: string = 'text';
+  @Input() value: any;
 }

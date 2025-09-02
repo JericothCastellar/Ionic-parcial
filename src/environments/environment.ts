@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   newsApi: {
     baseUrl: 'https://newsapi.org/v2',
-    apiKey: 'TU_NEWS_API_KEY'
+    apiKey: 'd3bf3693ed99454bb4e4a9ac7916ffe2'
   },
   countriesApi: 'https://countriesnow.space/api/v0.1/countries/flag/unicode'
 };

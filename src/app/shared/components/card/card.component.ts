@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
   standalone: false,
 })
-export class CardComponent  implements OnInit {
+export class CardComponent {
+  @Input() news: any;
+  @Output() select = new EventEmitter<any>(); 
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  handleClick() {
+    this.select.emit(this.news);
+  }
 }
