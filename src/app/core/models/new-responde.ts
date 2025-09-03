@@ -13,7 +13,7 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-  // 👉 Tu método de obtener titulares
+
   getTopHeadlines(country: string = 'us'): Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
       `${this.baseUrl}/top-headlines?country=${country}&apiKey=${this.apiKey}`

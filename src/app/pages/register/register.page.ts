@@ -57,7 +57,7 @@ export class RegisterPage implements OnInit {
       country: this.country
     };
 
-    // Guardar en localStorage (simulación)
+    // Guardar en localStorage (
     localStorage.setItem('user', JSON.stringify(user));
 
     alert('Registro exitoso');
